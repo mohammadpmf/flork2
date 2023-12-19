@@ -1,1 +1,12 @@
-ok
+{% extends "base.html" %}
+
+{% block title %}
+صفحه خانه
+{% endblock title %}
+
+{% block content %}
+Welcome to my site
+<p><a href="{% url 'signup' %}">برو به صفحه ثبت نام</a></p>
+<p><a href="{% url 'login' %}">برو به صفحه ورود</a></p>
+<p><a href="{% url 'logout' %}">برو به صفحه خروج</a></p>
+{% endblock content %}
