@@ -7,75 +7,25 @@
 {% block content %}
 <div class="container mt-4">
     <div class="row flex-row-reverse justify-content-md-center">
+        {% for book in books %}
         <div class="card m-2" style="max-width: 45%">
             <div class="row g-0 h-100" dir="rtl">
                 <div class="col-md-4">
-                    <img src="https://cdn.fidibo.com/phoenixpub/content/3b8d35b4-b686-4c89-b7f6-e3e4590e8dcb/fdb85390-9c08-4b34-9447-863356af88e4.jpg?width=384"
+                    <img src="{{ book.cover.url }}"
                          class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8 h-100">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div class="card-body">
-                            <h3 class="card-title"><strong>اثر مرکب</strong></h3>
-                            <p class="card-text pt-3">امروزه کتاب‌های موفقیت بسیار زیادی به انتشار رسیده است و در شبکه‌های مجازی و رسانه‌های مختلف افراد بسیاری هستند که رمز و رازهای موفقیت را به ما ارائه می‌کنند. شاید بتوان گفت استراتژی‌های موفقیت دیگر یک راز نیستند و بسیاری از افراد از آنها مطلع هستند. اما علت چیس</p>
-                            <p class="text-muted">نویسنده: دارن هاردی</p>
+                            <h3 class="card-title"><strong>{{ book.title }}</strong></h3>
+                            <p class="card-text pt-3">{{ book.description }}</p>
+                            <p class="text-muted">نویسنده: {{ book.author }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card m-2" style="max-width: 45%">
-            <div class="row g-0 h-100" dir="rtl">
-                <div class="col-md-4">
-                    <img src="https://cdn.fidibo.com/phoenixpub/content/508f02b8-4d3c-4345-93e6-e4d5ad093c7d/55b6f78c-1dc6-41e9-865b-c8dec7a3ebe7.jpg?width=384"
-                         class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8 h-100">
-                    <div class="d-flex flex-column justify-content-between h-100">
-                        <div class="card-body">
-                            <h3 class="card-title"><strong>جاناتان مرغ دریایی</strong></h3>
-                            <p class="card-text pt-3">بعضی‌ها عادت کردن را بلد نیستند. بلد نیستند در چارچوب زندگی کنند. نمی‌توانند تن به کلیشه بدهند و همواره رؤیاهایی در سر دارند و رفتارهایی می‌کنند که متفاوت بودنشان را فریاد می‌زند. خیلی‌ها این‌گونه رفتار کردن را تقبیح می‌کنند</p>
-                            <p class="text-muted">نویسنده: ریچارد باخ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card m-2" style="max-width: 45%">
-            <div class="row g-0 h-100" dir="rtl">
-                <div class="col-md-4">
-                    <img src="https://cdn.fidibo.com/phoenixpub/content/38fc154f-13b0-434a-85be-90015a5dd517/4407e86c-4c5d-47dd-a559-c0419c608eca.jpg?width=384"
-                         class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8 h-100">
-                    <div class="d-flex flex-column justify-content-between h-100">
-                        <div class="card-body">
-                            <h3 class="card-title"><strong>برتری خفیف</strong></h3>
-                            <p class="card-text pt-3">بسیاری از افراد به دنبال روشی هستند تا با کمک آن بتوانند به موفقیت‌های مالی دست یابند. منابع فراوانی از جمله سخنرانی‌ها و کتاب‌ها وجود دارند که ممکن است ما را در انتخاب  مسیر درست دچار سردرگمی و اشتباه کنند. اما خواندن تجربیات یک مدیر موفق</p>
-                            <p class="text-muted">نویسنده: جف اولسون</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card m-2" style="max-width: 45%">
-            <div class="row g-0 h-100" dir="rtl">
-                <div class="col-md-4">
-                    <img src="https://cdn.fidibo.com/phoenixpub/content/7f3fef81-8633-465a-be51-04d9fee8b9a9/489dd60a-0be1-4240-a727-e2b8f7129190.jpg?width=384"
-                         class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8 h-100">
-                    <div class="d-flex flex-column justify-content-between h-100">
-                        <div class="card-body">
-                            <h3 class="card-title"><strong>هفت عادت مردمان موثر</strong></h3>
-                            <p class="card-text pt-3">به توصیه و تایید افراد موفق و ثروتمند و راهنمایانی که برای موفقیت مالی
-                                افراد معمولی برنامه‌ریزی می‌کنند...</p>
-                            <p class="text-muted">نویسنده: استفان کاوی</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
