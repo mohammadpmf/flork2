@@ -11,8 +11,10 @@
         <div class="card m-2" style="max-width: 45%">
             <div class="row g-0 h-100" dir="rtl">
                 <div class="col-md-4">
+                    {% if book.cover %}
                     <img src="{{ book.cover.url }}"
                          class="img-fluid rounded-start" alt="...">
+                    {% endif %}
                 </div>
                 <div class="col-md-8 h-100">
                     <div class="d-flex flex-column justify-content-between h-100">
@@ -27,5 +29,43 @@
         </div>
         {% endfor %}
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" 
+                href="{% url 'book_list' %}?page={{page_obj.previous_page_number}}">
+                {{page_obj.previous_page_number}}
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" 
+                href="#">
+                Previous
+            </a>
+          </li>
+          {% endif %}
+          <li class="page-item">
+            <a class="page-link">{{ page_obj.number }}</a>
+          </li>
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link"
+                href="{% url 'book_list' %}?page={{page_obj.next_page_number}}">
+                {{page_obj.next_page_number}}
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link"
+                href="#">
+                Next
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
 </div>
+
 {% endblock content %}
