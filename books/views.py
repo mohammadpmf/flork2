@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 from .models import Book
 
@@ -11,4 +12,5 @@ class BooksList(generic.ListView):
 class AddBook(generic.CreateView):
     model = Book
     template_name = 'book_new.html'
-    fields = ['title', 'author', 'translator', 'publisher', 'price', 'description', 'cover']
+    fields = '__all__'
+    success_url = reverse_lazy('book_list')
