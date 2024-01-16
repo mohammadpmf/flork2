@@ -35,7 +35,7 @@
           <li class="page-item">
             <a class="page-link" 
                 href="{% url 'book_list' %}?page={{page_obj.previous_page_number}}">
-                {{page_obj.previous_page_number}}
+                Previous
             </a>
           </li>
           {% else %}
@@ -53,7 +53,7 @@
           <li class="page-item">
             <a class="page-link"
                 href="{% url 'book_list' %}?page={{page_obj.next_page_number}}">
-                {{page_obj.next_page_number}}
+                Next
             </a>
           </li>
           {% else %}

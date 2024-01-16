@@ -8,3 +8,7 @@ class BooksList(generic.ListView):
     template_name = 'book_list.html'
     paginate_by = 4
     
+class AddBook(generic.CreateView):
+    model = Book
+    template_name = 'book_new.html'
+    fields = ['title', 'author', 'translator', 'publisher', 'price', 'description', 'cover']
