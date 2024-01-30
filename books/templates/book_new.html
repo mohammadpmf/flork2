@@ -2,12 +2,14 @@
 
 {% block content %}
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="ذخیره کتاب">
-</form>
+<div class="container card shadow p-5 mt-5" dir="rtl">
+    <form dir method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input class="btn btn-outline-success" type="submit" value="ذخیره کتاب">
+    </form>
+</div>
 
 {% endblock content %}

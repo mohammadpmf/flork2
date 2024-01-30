@@ -19,9 +19,11 @@
                 <div class="col-md-8 h-100">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div class="card-body">
+                          <a class="text-decoration-none" href="{% url 'logout' %}">
                             <h3 class="card-title"><strong>{{ book.title }}</strong></h3>
-                            <p class="card-text pt-3">{{ book.description }}</p>
-                            <p class="text-muted">نویسنده: {{ book.author }}</p>
+                          </a>
+                          <p class="card-text pt-3">{{ book.description }}</p>
+                          <p class="text-muted">نویسنده: {{ book.author }}</p>
                         </div>
                     </div>
                 </div>
