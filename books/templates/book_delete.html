@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+صفحه پاک کردن
+{% endblock title %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>آیا از پاک کردن کتاب {{ book.title }} اطمینان دارید؟</h1>
+    <input type="submit" value="بله پاک کن.">
+</form>
+{% endblock content %}
