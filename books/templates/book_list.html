@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load mytags %}
+
 {% block title %}
 لیست تمام کتاب ها
 {% endblock title %}
@@ -19,10 +21,10 @@
                 <div class="col-md-8 h-100">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div class="card-body">
-                          <a class="text-decoration-none" href="{% url 'logout' %}">
-                            <h3 class="card-title"><strong>{{ book.title }}</strong></h3>
+                          <a class="text-decoration-none" href="{% url 'detail' book.pk %}">
+                            <h3 class="card-title"><strong>{{ book.title|add_mohammad }}</strong></h3>
                           </a>
-                          <p class="card-text pt-3">{{ book.description }}</p>
+                          <p class="card-text pt-3">{{ book.description|truncatechars:200 }}</p>
                           <p class="text-muted">نویسنده: {{ book.author }}</p>
                         </div>
                     </div>
